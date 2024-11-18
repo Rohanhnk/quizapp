@@ -10,35 +10,36 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 
-let questions = [
-    {
-        question: "What is the name of the tournament that Goku participates in during the Universe 6 Saga?",
-        choice1: "Tournament Of Power",
-        choice2: "World Martial Artist Tournament",
-        choice3: "Universe 6 Tournamet",
-        choice4: "Galactic Battle Royale",
-        answer: 3
-    },
-    {
-        question:
-        "In Dragon Ball Super, who is the Supreme Kai of Universe 11?",
-        choice1: "Sidra",
-        choice2: "Fuwa",
-        choice3: "Marcarita",
-        choice4: "Gowasu",
-        answer: 3
-    },
-    {
-        question:
-        " What technique does Goku use to fight Jiren during the Tournament of Power that drastically increases his power level but puts a strain on his body?",
-        choice1: "kioken x20",
-        choice2: "Ultra Instinct",
-        choice3: "Super Saiyan Blue",
-        choice4: "Spirit Bomb",
-        answer: 2
-    }
-];
+let questions = [];
 
+fetch("https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple")
+.then(res =>{
+    return res.json();
+})
+.then(loadedQuestions => {
+    console.log(loadedQuestions.results);
+   questions = loadedQuestions.results.map(loadedQuestion=>{
+    const formattedQuestion = {
+        question: loadedQuestion.question
+    };
+    const answerChoices = [... loadedQuestion.incorrect_answers];
+    formattedQuestion.answer = Math.floor(Math.random() * 3) * 1;
+    answerChoices.splice(formattedQuestion.answer -1, 0,
+        loadedQuestion.incorrect_answers);
+
+        answerChoices.forEach((choice, index) => {
+            formattedQuestion["choice" + (index + 1)] = choice;
+        });
+
+        return formattedQuestion;
+    });
+   startGame();
+})
+.catch(err =>{
+    console.error(err);
+});
+
+ 
 //CONSTANTS
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
@@ -95,6 +96,7 @@ choices.forEach(choice => {
 
     setTimeout( () => {
         selectedChoice.parentElement.classList.remove(classToApply);
+        acceptingAnswers = true;
         getNewQuestion();
     }, 1000);
 });
@@ -105,4 +107,4 @@ incrementScore = num => {
     scoreText.innerText = score;
 };
 
-startGame();
+

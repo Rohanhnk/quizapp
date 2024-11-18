@@ -1,0 +1,28 @@
+[
+    {
+        "question": "What is the name of the tournament that Goku participates in during the Universe 6 Saga?",
+        "choice1": "Tournament Of Power",
+        "choice2": "World Martial Artist Tournament",
+        "choice3": "Universe 6 Tournamet",
+        "choice4": "Galactic Battle Royale",
+        "answer": 3
+    },
+    {
+        "question":
+        "In Dragon Ball Super, who is the Supreme Kai of Universe 11?",
+        "choice1": "Sidra",
+        "choice2": "Fuwa",
+       "choice3": "Marcarita",
+        "choice4": "Gowasu",
+        "answer": 3
+    },
+    {
+        "question":
+        " What technique does Goku use to fight Jiren during the Tournament of Power that drastically increases his power level but puts a strain on his body?",
+        "choice1": "kioken x20",
+        "choice2": "Ultra Instinct",
+        "choice3": "Super Saiyan Blue",
+        "choice4": "Spirit Bomb",
+        "answer": 2
+    }
+]
