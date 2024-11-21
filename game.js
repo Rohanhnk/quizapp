@@ -1,3 +1,8 @@
+const decodeHTML = (html) => {
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    return doc.documentElement.textContent;
+};
+
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const progressText = document.getElementById("progressText");
@@ -13,6 +18,7 @@ let questionCounter = 0;
 let availableQuestions = [];
 
 let questions = [];
+
 
 fetch("https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple")
 .then(res =>{
@@ -71,11 +77,11 @@ getNewQuestion = () => {
 
  const questionIndex =  Math.floor(Math.random() * availableQuestions.length);
  currentQuestion = availableQuestions[questionIndex];
- question.innerText = currentQuestion.question;
+ question.innerHTML = currentQuestion.question;
 
  choices.forEach (choice => {
     const number = choice.dataset["number"];
-    choice.innerText = currentQuestion["choice" + number];
+    choice.innerHTML = currentQuestion["choice" + number];
  });
 
  availableQuestions.splice(questionIndex, 1);
