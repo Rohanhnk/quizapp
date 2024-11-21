@@ -50,8 +50,9 @@ fetch("https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=mu
 
  
 //CONSTANTS
-const CORRECT_BONUS = 10;
+const CORRECT_BONUS = 4;
 const MAX_QUESTIONS = 3;
+const INCORRECT_BONUS = -1;
 
 startGame = () => {
     questionCounter = 0;
@@ -101,6 +102,8 @@ choices.forEach(choice => {
 
     if(classToApply === "correct") {
         incrementScore(CORRECT_BONUS);
+    } else {
+        incrementScore(INCORRECT_BONUS);
     }
             
     selectedChoice.parentElement.classList.add(classToApply);
