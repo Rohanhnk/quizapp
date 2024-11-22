@@ -76,6 +76,8 @@ getNewQuestion = () => {
     //update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
+    changeBackgroundColor();
+
  const questionIndex =  Math.floor(Math.random() * availableQuestions.length);
  currentQuestion = availableQuestions[questionIndex];
  question.innerHTML = currentQuestion.question;
@@ -88,6 +90,11 @@ getNewQuestion = () => {
  availableQuestions.splice(questionIndex, 1);
  acceptingAnswers = true;
 };
+
+const changeBackgroundColor = ()=> {
+    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+    document.body.style.backgroundColor = randomColor;
+}
 
 choices.forEach(choice => {
     choice.addEventListener("click", e => {
