@@ -19,11 +19,20 @@ let availableQuestions = [];
 
 let questions = [];
 
+const selectedCategoryId = localStorage.getItem("selectedCategoryId") || "9";
 
-fetch("https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple")
-.then(res =>{
-    return res.json();
-})
+const categoryUrls = {
+    "9": "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple", // General Knowledge
+    "11": " https://opentdb.com/api.php?amount=10&category=11&difficulty=easy&type=multiple", // Entertainment: Film
+    "15": "https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple", // Animals
+    "27":"https://opentdb.com/api.php?amount=10&category=27&difficulty=easy&type=multiple",
+    "30":"https://opentdb.com/api.php?amount=10&category=31&difficulty=easy&type=multiple",
+};
+
+const triviaUrl = categoryUrls[selectedCategoryId];
+
+fetch(triviaUrl)
+.then(res => res.json())
 .then(loadedQuestions => {
     console.log(loadedQuestions.results);
    questions = loadedQuestions.results.map(loadedQuestion=> {
