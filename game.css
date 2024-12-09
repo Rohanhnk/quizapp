@@ -120,7 +120,7 @@
     }
 
     #progressBar {
-        width: 45rem;  /* Full width on mobile */
+        width: 40rem;  /* Full width on mobile */
         height: 3rem; /* Reduce height for mobile to avoid taking too much space */
         margin-top: 1rem;
     }
