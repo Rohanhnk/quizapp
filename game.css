@@ -120,7 +120,7 @@
     }
 
     #progressBar {
-        width: 100%;  /* Full width on mobile */
+        width: 70rem;  /* Full width on mobile */
         height: 3rem; /* Reduce height for mobile to avoid taking too much space */
         margin-top: 1rem;
     }
@@ -134,6 +134,18 @@
         height: 8rem;
     }
 }
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    #progressBar {
+        width: 70rem;  /* Slightly smaller width for tablets */
+        height: 3.5rem;
+    }
+
+    #progressBarFull {
+        height: 3.3rem;
+    }
+}
+
 
 /* Desktop Devices (1025px and above) */
 @media (min-width: 1025px) {
