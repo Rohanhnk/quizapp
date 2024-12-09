@@ -12,3 +12,21 @@ margin-bottom: 4rem;
 .high-score:hover {
     transform: scale(1.025);
 }
+
+@media (max-width: 600px) {
+    #highScoresList {
+        padding-left: 1rem; /* Add some padding for mobile */
+    }
+
+    .high-score {
+        font-size: 2rem; /* Reduce font size for mobile */
+        margin-bottom: 0.3rem; /* Less spacing between items */
+    }
+}
+
+/* Desktop Devices (1025px and above) */
+@media (min-width: 1025px) {
+    .high-score {
+        font-size: 2.8rem; /* Default large font size */
+    }
+}

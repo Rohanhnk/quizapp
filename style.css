@@ -43,7 +43,7 @@ h3{
 /*utilitites*/
 
 .container{
-    width: 100vh;
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -125,4 +125,49 @@ input{
 
 input::placeholder{
     color: #aaa;
+}
+
+@media (max-width: 600px) {
+
+    :root {
+        font-size: 50%; /* 1rem = 8px */
+    }
+
+    h1 {
+        font-size: 3.2rem; /* 32px */
+        margin-bottom: 2rem;
+    }
+
+    h2 {
+        font-size: 2.8rem; /* 28px */
+        margin-bottom: 2rem;
+    }
+
+    .btn {
+        font-size: 1.6rem; /* 16px */
+        width: 80%; /* Full width on small screens */
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    input {
+        width: 80%; /* Full width of input field on small screens */
+        padding: 1.2rem; /* Slightly smaller padding */
+        font-size: 1.6rem; /* 16px */
+    }
+}
+
+/* Larger Screens */
+@media (min-width: 1025px) {
+    .btn {
+        font-size: 2rem; /* 20px */
+        width: 20rem; /* Full width on large screens */
+    }
+
+    input {
+        width: 20rem; /* Full width on large screens */
+        font-size: 1.8rem; /* 18px */
+    }
 }

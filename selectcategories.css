@@ -72,3 +72,41 @@ button:hover {
 a {
     text-decoration: none;
 }
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Add some padding to the body */
+        display: block; /* Make the body display as block to avoid stretched flex */
+    }
+
+    .container {
+        padding: 20px; /* Reduce padding on small screens */
+        width: 90%; /* Make the container more responsive */
+        max-width: 100%; /* Allow the container to stretch up to full width */
+    }
+
+    h1 {
+        font-size: 1.6rem; /* Reduce font size for mobile */
+        margin-bottom: 15px;
+    }
+
+    label {
+        font-size: 1rem; /* Adjust font size of labels for small screens */
+    }
+
+    select, button {
+        font-size: 1rem; /* Make the text inside select and button smaller */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Desktop Devices (1025px and above) */
+@media (min-width: 1025px) {
+    .container {
+        width: 50%; /* Keep container at 50% for desktop */
+    }
+
+    h1 {
+        font-size: 2rem; /* Keep default heading size */
+    }
+}
