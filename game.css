@@ -54,6 +54,7 @@
     height: 4rem;
     border: 0.3rem solid #56a5eb;
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 #progressBarFull {
@@ -119,7 +120,13 @@
     }
 
     #progressBar {
-        width: 100%; /* Full width on small screens */
+        width: 100%;  /* Full width on mobile */
+        height: 3rem; /* Reduce height for mobile to avoid taking too much space */
+        margin-top: 1rem;
+    }
+
+    #progressBarFull {
+        height: 2.8rem;  /* Slightly reduced height for progress fill on mobile */
     }
 
     #loader {
