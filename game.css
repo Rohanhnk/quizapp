@@ -83,6 +83,17 @@
 }
 
 @media (max-width: 600px) {
+
+    html {
+        width: 100vw; /* Force width to be the full viewport width */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
     :root {
         font-size: 50%; /* 1rem = 8px for small screens */
     }
