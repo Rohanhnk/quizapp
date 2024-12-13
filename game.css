@@ -111,7 +111,7 @@
         align-items: center; /* Vertically center the letter */
         justify-content: center; /* Horizontally center the letter */
         width: 3rem; /* Fixed width for the prefix box */
-        height: 3rem;
+        height: 100%;
     }
 
     .choice-text {
