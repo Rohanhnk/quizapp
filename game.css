@@ -1,3 +1,11 @@
+html, body {
+    overflow-x: hidden; /* Prevents horizontal scroll */
+    margin: 0; /* Removes unwanted margin */
+    padding: 0;
+    width: 100%; /* Ensures full-width content */
+    box-sizing: border-box;
+}
+
 .choice-container{
     display: flex;
     margin-bottom: 0.5rem;
